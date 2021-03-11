@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title></title>
+
+  <link rel="stylesheet" href="../plugin/bootstrap-4.3.1/css/bootstrap.css">
+  <link rel="stylesheet" href="../plugin/fontawesome6/pro/css/all.css">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div id="app">
+    <nav>
+      <div class="container">
+
+        <div class="main-content">
+
+          <a href="#" class="brand-icon">
+            <img src="../img/brand.png" alt="">
+          </a>
+
+          <div class="menu-items">
+            <ul class="list-unstyled">
+              <li class="list-inline-item active">
+                <a href="#">
+                  Find
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  About Us
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  How It Works
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  Plans
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  Contact Us
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="d-flex user-img">
+            <img src="../img/user.png" class="rounded-circle" alt="user">
+          </div>
+
+        </div>
+
+
+        <div class="cart">
+          <a href="#" class="btn-cart">
+            <i class="fa fa-shopping-basket"></i>
+            <span>(5)</span>
+            Items
+          </a>
+        </div>
+      </div>
+    </nav>
+
+
+    <section class="banner-top">
+      <div class="container">
+        <div class="daily-quote">
+          <p>People who loves to eat are always Best People</p>
+          <small>JULIA CHILD</small>
+        </div>
+        <div class="banner">
+          <p>Find Healthy And
+            Favourite Foods
+            Near You</p>
+            <div class="download-links">
+              <a href="#">
+                <img src="../img/Untitled-1.png" alt="">
+              </a>
+              <a href="#">
+                <img src="../img/Untitled-2.png" alt="">
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="product">
+        <div class="container">
+          <header class="title-search">
+            <h3>OUR MEALS</h3>
+            <div class="options">
+              <div class="search">
+                <input type="text" class="form-control" placeholder="Search by name">
+                <i class="fa-regular fa-magnifying-glass"></i>
+              </div>
+              <div class="options-box">
+                <div class="box">
+                  <h5>Your Meal Has Been Shipped</h5>
+                  <img src="../img/Untitled-3.png" alt="">
+                  <div class="time">
+                    <span>15</span>
+                    <i>m</i>
+                    <span>:</span>
+                    <span>20</span>
+                    <i>s</i>
+                  </div>
+                </div>
+
+                <div class="box">
+                  <h6>Price/Serving</h6>
+                  <img src="../img/slider.png" alt="">
+                  <h6>Cusine</h6>
+                  <ul class="Cusine">
+                    <li class="active">American</li>
+                    <li>Italian</li>
+                    <li>Japanese</li>
+                    <li>Mexican</li>
+                    <li>Seafood</li>
+                    <li class="active">Indian</li>
+                    <li>Italian</li>
+                    <li>Persian</li>
+                  </ul>
+                  <div class="select">
+                    <button type="button" name="button" class="btn">Select</button>
+                  </div>
+                </div>
+              </div>
+              <button type="button" class="btn"><i class="fa-solid fa-sliders"></i></button>
+            </div>
+          </header>
+          <div class="category">
+            <ul>
+              <li class="active">All (170)</li>
+              <li>
+                <i class="fa-light fa-steak"></i>
+                Break Fast (23)
+              </li>
+              <li>
+                <i class="fa-light fa-fork-knife"></i>
+                Lunch (41)
+              </li>
+              <li>
+                <i class="fa-light fa-glass-citrus"></i>
+                Drinks (57)
+              </li>
+              <li>
+                <i class="fa-light fa-cake-candles"></i>
+                Desserts (43)
+              </li>
+            </ul>
+          </div>
+          <div class="products-list">
+            <div class="row">
+                <product-box v-for="(product , index) in products" v-bind:key="product.id" :name="product.name"
+                :image="product.image" :rate="product.rate" :reviews="product.reviews" :like="product.like"
+                :category="product.category" :countries="product.countries" :time="product.time" ></product-box>
+            </div>
+
+            <div class="section-title">
+              <h3>POPULAR</h3>
+              <span></span>
+            </div>
+            <div class="row">
+                  <product-box v-for="(product , index) in products" v-bind:key="product.id" :name="product.name"
+                  :image="product.image" :rate="product.rate" :reviews="product.reviews" :like="product.like"
+                  :category="product.category" :countries="product.countries" :time="product.time" ></product-box>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+
+  </body>
+  <script src="../js/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="../plugin/bootstrap-4.3.1/js/bootstrap.js"></script>
+  <script src="../js/script.js"></script>
+
+
+
+
+
+
+
+
+  </html>
