@@ -11,6 +11,7 @@
 </head>
 <body>
   <div id="app">
+    <!-- start Navigation section -->
     <nav>
       <div class="container">
 
@@ -66,8 +67,9 @@
         </div>
       </div>
     </nav>
+    <!-- end Navigation section -->
 
-
+    <!-- start Banner section -->
     <section class="banner-top">
       <div class="container">
         <div class="daily-quote">
@@ -86,111 +88,113 @@
                 <img src="../img/Untitled-2.png" alt="">
               </a>
             </div>
-          </div>
         </div>
-      </section>
+      </div>
+    </section>
+    <!-- start Banner section -->
 
 
-      <section class="product">
-        <div class="container">
-          <header class="title-search">
-            <h3>OUR MEALS</h3>
-            <div class="options">
-              <div class="search">
-                <input type="text" class="form-control" placeholder="Search by name">
-                <i class="fa-regular fa-magnifying-glass"></i>
-              </div>
-              <div class="options-box">
-                <div class="box">
-                  <h5>Your Meal Has Been Shipped</h5>
-                  <img src="../img/Untitled-3.png" alt="">
-                  <div class="time">
-                    <span>15</span>
-                    <i>m</i>
-                    <span>:</span>
-                    <span>20</span>
-                    <i>s</i>
-                  </div>
-                </div>
+    <!-- start Product section -->
+    <section class="product">
+      <div class="container">
 
-                <div class="box">
-                  <h6>Price/Serving</h6>
-                  <img src="../img/slider.png" alt="">
-                  <h6>Cusine</h6>
-                  <ul class="Cusine">
-                    <li class="active">American</li>
-                    <li>Italian</li>
-                    <li>Japanese</li>
-                    <li>Mexican</li>
-                    <li>Seafood</li>
-                    <li class="active">Indian</li>
-                    <li>Italian</li>
-                    <li>Persian</li>
-                  </ul>
-                  <div class="select">
-                    <button type="button" name="button" class="btn">Select</button>
-                  </div>
+        <!-- start Title + Search -->
+        <header class="title-search">
+          <h3>OUR MEALS</h3>
+          <div class="options">
+            <div class="search">
+              <input type="text" class="form-control" placeholder="Search by name">
+              <i class="fa-regular fa-magnifying-glass"></i>
+            </div>
+            <div class="options-box">
+              <div class="box">
+                <h5>Your Meal Has Been Shipped</h5>
+                <img src="../img/Untitled-3.png" alt="">
+                <div class="time">
+                  <span>15</span>
+                  <i>m</i>
+                  <span>:</span>
+                  <span>20</span>
+                  <i>s</i>
                 </div>
               </div>
-              <button type="button" class="btn"><i class="fa-solid fa-sliders"></i></button>
-            </div>
-          </header>
-          <div class="category">
-            <ul>
-              <li class="active">All (170)</li>
-              <li>
-                <i class="fa-light fa-steak"></i>
-                Break Fast (23)
-              </li>
-              <li>
-                <i class="fa-light fa-fork-knife"></i>
-                Lunch (41)
-              </li>
-              <li>
-                <i class="fa-light fa-glass-citrus"></i>
-                Drinks (57)
-              </li>
-              <li>
-                <i class="fa-light fa-cake-candles"></i>
-                Desserts (43)
-              </li>
-            </ul>
-          </div>
-          <div class="products-list">
-            <div class="row">
-                <product-box v-for="(product , index) in products" v-bind:key="product.id" :name="product.name"
-                :image="product.image" :rate="product.rate" :reviews="product.reviews" :like="product.like"
-                :category="product.category" :countries="product.countries" :time="product.time" ></product-box>
-            </div>
 
-            <div class="section-title">
-              <h3>POPULAR</h3>
-              <span></span>
+              <div class="box">
+                <h6>Price/Serving</h6>
+                <img src="../img/slider.png" alt="">
+                <h6>Cusine</h6>
+                <ul class="Cusine">
+                  <li class="active">American</li>
+                  <li>Italian</li>
+                  <li>Japanese</li>
+                  <li>Mexican</li>
+                  <li>Seafood</li>
+                  <li class="active">Indian</li>
+                  <li>Italian</li>
+                  <li>Persian</li>
+                </ul>
+                <div class="select">
+                  <button type="button" name="button" class="btn">Select</button>
+                </div>
+              </div>
             </div>
-            <div class="row">
-                  <product-box v-for="(product , index) in products" v-bind:key="product.id" :name="product.name"
-                  :image="product.image" :rate="product.rate" :reviews="product.reviews" :like="product.like"
-                  :category="product.category" :countries="product.countries" :time="product.time" ></product-box>
-            </div>
+            <button type="button" class="btn"><i class="fa-solid fa-sliders"></i></button>
+          </div>
+        </header>
+
+        <!-- start Product category list (in title) section -->
+        <div class="category">
+          <ul>
+            <li class="active">All (170)</li>
+            <li>
+              <i class="fa-light fa-steak"></i>
+              Break Fast (23)
+            </li>
+            <li>
+              <i class="fa-light fa-fork-knife"></i>
+              Lunch (41)
+            </li>
+            <li>
+              <i class="fa-light fa-glass-citrus"></i>
+              Drinks (57)
+            </li>
+            <li>
+              <i class="fa-light fa-cake-candles"></i>
+              Desserts (43)
+            </li>
+          </ul>
+        </div>
+
+        <div class="products-list">
+
+          <!-- start Product List (use component) section -->
+          <div class="row">
+            <product-box v-for="(product , index) in products" v-bind:key="product.id" :name="product.name"
+            :image="product.image" :rate="product.rate" :reviews="product.reviews" :like="product.like"
+            :category="product.category" :countries="product.countries" :time="product.time" ></product-box>
+          </div>
+
+          <div class="section-title">
+            <h3>POPULAR</h3>
+            <span></span>
+          </div>
+
+          <!-- start Product List (use component) section -->
+          <div class="row">
+            <product-box v-for="(product , index) in products" v-bind:key="product.id" :name="product.name"
+            :image="product.image" :rate="product.rate" :reviews="product.reviews" :like="product.like"
+            :category="product.category" :countries="product.countries" :time="product.time" ></product-box>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
+    <!-- start Product section -->
+  </div>
 
-    </div>
-
-
+    <script src="../js/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../plugin/bootstrap-4.3.1/js/bootstrap.js"></script>
+    <script src="../js/script.js"></script>
   </body>
-  <script src="../js/jquery-3.2.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="../plugin/bootstrap-4.3.1/js/bootstrap.js"></script>
-  <script src="../js/script.js"></script>
-
-
-
-
-
-
-
-
   </html>
